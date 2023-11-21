@@ -28,9 +28,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2YQPJF6HKX4gK7zo7PcmFvkzLuX" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -38,10 +38,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "F:/云E办/yeb-web-master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -55,13 +60,32 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="应用程序.CodeGenerator">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Java Project\Spring Boot\oa\oa-server\src\main\java\games\highping\server\service" />
+      <recent name="F:\Java Project\Spring Boot\oa\oa-server\src\main\java\games\highping\server\service\impl" />
+      <recent name="F:\Java Project\Spring Boot\oa\oa-server\src\main\java\games\highping\server\mapper" />
+      <recent name="F:\Java Project\Spring Boot\oa\oa-server\src\main\java\games\highping\server\controller" />
+      <recent name="F:\Java Project\Spring Boot\oa\oa-server\src\main\java\games\highping\server\pojo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Java Project\Spring Boot\oa\oa-server\src\main\resources\mapper" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.OaApplication">
     <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="games.highping.CodeGenerator" />
       <module name="oa-generator" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="games.highping.*" />
+          <option name="PATTERN" value="games.highping.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -69,16 +93,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="oa" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="games.highping.oa.OaApplication" />
+    <configuration name="OaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="oa-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="games.highping.server.OaApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="games.highping.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.OaApplication" />
         <item itemvalue="应用程序.CodeGenerator" />
       </list>
     </recent_temporary>
@@ -91,7 +121,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1700454758812</updated>
-      <workItem from="1700454759930" duration="10203000" />
+      <workItem from="1700454759930" duration="12957000" />
+      <workItem from="1700526557087" duration="23798000" />
     </task>
     <servers />
   </component>
