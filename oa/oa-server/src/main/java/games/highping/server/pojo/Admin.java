@@ -26,7 +26,7 @@ import java.util.Collection;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("t_admin")
-@ApiModel(value="Admin对象", description="")
+@ApiModel(value="Admin对象", description="管理员表")
 public class Admin implements Serializable, UserDetails {
 
     private static final long serialVersionUID = 1L;
@@ -60,7 +60,7 @@ public class Admin implements Serializable, UserDetails {
     private String remark;
 
     @ApiModelProperty(value = "是否启用")
-    private Integer enabled;
+    private Boolean enabled;
 
 
     @Override
@@ -85,6 +85,8 @@ public class Admin implements Serializable, UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return enabled==1;
+        return this.enabled;
     }
+
+
 }

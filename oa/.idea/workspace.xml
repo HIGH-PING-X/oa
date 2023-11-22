@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c5dc111-b3cc-462a-8acc-2eaff304603b" name="更改" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/../.idea/oa.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
@@ -14,6 +15,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oa-server/src/main/java/games/highping/server/service/IAdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oa-server/src/main/java/games/highping/server/service/IAdminService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oa-server/target/classes/games/highping/server/service/impl/AdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oa-server/target/classes/games/highping/server/service/impl/AdminServiceImpl.class" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oa-server/src/main/java/games/highping/server/config/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/oa-server/src/main/java/games/highping/server/config/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oa-server/target/classes/games/highping/server/config/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/oa-server/target/classes/games/highping/server/config/security/SecurityConfig.class" afterDir="false" />
+>>>>>>> 44041e9194ebaeb23d085151dafc96914cd84fe2
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +55,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
@@ -68,6 +75,26 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "F:/GitHub/oa/oa",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
+>>>>>>> 44041e9194ebaeb23d085151dafc96914cd84fe2
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -138,8 +165,12 @@
       <updated>1700454758812</updated>
       <workItem from="1700454759930" duration="12957000" />
       <workItem from="1700526557087" duration="23798000" />
+<<<<<<< HEAD
       <workItem from="1700565465461" duration="1270000" />
       <workItem from="1700567053768" duration="1833000" />
+=======
+      <workItem from="1700612163966" duration="25140000" />
+>>>>>>> 44041e9194ebaeb23d085151dafc96914cd84fe2
     </task>
     <servers />
   </component>
