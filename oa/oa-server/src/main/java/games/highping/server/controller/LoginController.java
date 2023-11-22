@@ -35,7 +35,7 @@ public class LoginController {
         if (null == principal) {
             return null;
         }
-        String username = principal.getName();
+        String username = principal.getUsername();
         Admin admin = adminService.getAdminByUserName(username);
         admin.setPassword(null);
         return admin;
