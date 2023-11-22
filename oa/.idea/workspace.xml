@@ -7,18 +7,7 @@
     <list default="true" id="2c5dc111-b3cc-462a-8acc-2eaff304603b" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oa-server/src/main/java/games/highping/server/config/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/oa-server/src/main/java/games/highping/server/config/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oa-server/src/main/java/games/highping/server/config/swagger/Swagger2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/oa-server/src/main/java/games/highping/server/config/swagger/Swagger2Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oa-server/src/main/java/games/highping/server/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oa-server/src/main/java/games/highping/server/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oa-server/src/main/java/games/highping/server/controller/NoobController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oa-server/src/main/java/games/highping/server/controller/NoobController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oa-server/src/main/java/games/highping/server/pojo/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/oa-server/src/main/java/games/highping/server/pojo/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oa-server/src/main/java/games/highping/server/service/IAdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oa-server/src/main/java/games/highping/server/service/IAdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oa-server/src/main/java/games/highping/server/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oa-server/src/main/java/games/highping/server/service/impl/AdminServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oa-server/target/classes/games/highping/server/config/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/oa-server/target/classes/games/highping/server/config/security/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oa-server/target/classes/games/highping/server/config/swagger/Swagger2Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/oa-server/target/classes/games/highping/server/config/swagger/Swagger2Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oa-server/target/classes/games/highping/server/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oa-server/target/classes/games/highping/server/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oa-server/target/classes/games/highping/server/controller/NoobController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oa-server/target/classes/games/highping/server/controller/NoobController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oa-server/target/classes/games/highping/server/pojo/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/oa-server/target/classes/games/highping/server/pojo/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oa-server/target/classes/games/highping/server/service/impl/AdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oa-server/target/classes/games/highping/server/service/impl/AdminServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +131,7 @@
       <updated>1700454758812</updated>
       <workItem from="1700454759930" duration="12957000" />
       <workItem from="1700526557087" duration="23798000" />
-      <workItem from="1700612163966" duration="20467000" />
+      <workItem from="1700612163966" duration="25140000" />
     </task>
     <servers />
   </component>
