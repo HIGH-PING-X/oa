@@ -6,7 +6,6 @@ import games.highping.server.config.security.JwtTokenUtil;
 import games.highping.server.mapper.AdminMapper;
 import games.highping.server.mapper.AdminRoleMapper;
 import games.highping.server.pojo.Admin;
-import games.highping.server.pojo.AdminRole;
 import games.highping.server.pojo.RespBean;
 import games.highping.server.service.IAdminService;
 import org.springframework.beans.factory.annotation.Autowired;

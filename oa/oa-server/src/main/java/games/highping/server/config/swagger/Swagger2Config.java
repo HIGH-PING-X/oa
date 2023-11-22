@@ -42,19 +42,31 @@ public class Swagger2Config {
                 .build();
     }
 
+    /**
+     * 设置请求头信息
+     * @return
+     */
     private List<ApiKey> securitySchemes() {
         List<ApiKey> result = new ArrayList<>();
-        ApiKey apiKey = new ApiKey("Authorization","Authorization","header");
-        result.add(apiKey);
+        result.add(new ApiKey("Authorization","Authorization","header"));
         return result;
     }
-    
+
+    /**
+     * 设置需要登录认证的路径
+     * @return
+     */
     private List<SecurityContext> securityContexts() {
         List<SecurityContext> result = new ArrayList<>();
         result.add(getContextByPath("/noob/.*"));
         return result;
     }
 
+    /**
+     * 设置需要登录认证的路径
+     * @param s
+     * @return
+     */
     private SecurityContext getContextByPath(String s) {
         return SecurityContext.builder()
                 .securityReferences(defaultAuth())

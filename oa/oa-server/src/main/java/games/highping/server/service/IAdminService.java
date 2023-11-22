@@ -30,5 +30,4 @@ public interface IAdminService extends IService<Admin> {
     RespBean login(String username, String password, String code, HttpServletRequest request);
 
     Admin getAdminByUserName(String username);
-    List<AdminRole> getRoles(Integer adminId);
 }

@@ -8,6 +8,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,7 +30,8 @@ public class LoginController {
 
     @ApiOperation(value = "获取当前登录用户信息")
     @GetMapping("/admin/info")
-    public Admin getAdminInfo(Principal principal) {
+    public Admin getAdminInfo() {
+        Admin principal = (Admin) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (null == principal) {
             return null;
         }
