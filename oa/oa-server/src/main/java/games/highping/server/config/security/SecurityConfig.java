@@ -50,10 +50,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers(
-                "/admin/info",
+                //"/admin/info",
                 "/noob/**",
                 "/websocket/**",
+                "/doc.html",
                 "/**.html",
+                "/login",
                 "/login/**",
                 "/register/**",
                 "/logout/**",
@@ -71,6 +73,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         );
     }
 
+    @Override
     @Bean
     public UserDetailsService userDetailsService() {
         return username -> {
@@ -82,8 +85,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         };
     }
 
+    //TODO update
     @Bean
     public JwtAuthencationTokenFilter jwtAuthencationTokenFilter() {
         return new JwtAuthencationTokenFilter();
     }
+
 }

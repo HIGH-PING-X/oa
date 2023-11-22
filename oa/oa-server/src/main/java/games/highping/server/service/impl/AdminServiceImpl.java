@@ -58,10 +58,11 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
      */
     @Override
     public RespBean login(String username, String password, String code, HttpServletRequest request) {
-        String captcha = (String) request.getSession().getAttribute("captcha");
+        //TODO update
+        /*String captcha = (String) request.getSession().getAttribute("captcha");
         if (StringUtils.isEmpty(code) || !captcha.equalsIgnoreCase(code)) {
             return RespBean.error("验证码填写错误");
-        }
+        }*/
         // 登录
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
         if (null == userDetails || !passwordEncoder.matches(password, userDetails.getPassword())) {
@@ -86,7 +87,7 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
     // 根据用户名获取用户
     @Override
     public Admin getAdminByUserName(String username) {
-        return adminMapper.selectOne(new QueryWrapper<Admin>().eq("username", username).eq("enabled", true));
+        return adminMapper.selectOne(new QueryWrapper<Admin>().eq("username", username).eq("enabled", 1));
     }
 
 }

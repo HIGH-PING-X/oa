@@ -35,6 +35,7 @@ public class LoginController {
         if (null == principal) {
             return null;
         }
+        //TODO update
         String username = principal.getUsername();
         Admin admin = adminService.getAdminByUserName(username);
         admin.setPassword(null);
