@@ -5,8 +5,10 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import games.highping.server.config.security.JwtTokenUtil;
 import games.highping.server.mapper.AdminMapper;
 import games.highping.server.mapper.AdminRoleMapper;
+import games.highping.server.mapper.RoleMapper;
 import games.highping.server.pojo.Admin;
 import games.highping.server.pojo.RespBean;
+import games.highping.server.pojo.Role;
 import games.highping.server.service.IAdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,7 +18,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -44,6 +45,8 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
     private AdminMapper adminMapper;
     @Autowired
     private AdminRoleMapper adminRoleMapper;
+    @Autowired
+    private RoleMapper roleMapper;
     @Value("${jwt.tokenHead}")
     private String tokenHead;
 
@@ -88,6 +91,12 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
     @Override
     public Admin getAdminByUserName(String username) {
         return adminMapper.selectOne(new QueryWrapper<Admin>().eq("username", username).eq("enabled", 1));
+    }
+
+    // 根据用户id获取角色列表
+    @Override
+    public List<Role> getRoles(Integer adminId) {
+        return roleMapper.getRoles(adminId);
     }
 
 }

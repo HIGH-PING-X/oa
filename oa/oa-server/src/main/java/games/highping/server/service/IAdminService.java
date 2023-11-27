@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import games.highping.server.pojo.Admin;
 import games.highping.server.pojo.AdminRole;
 import games.highping.server.pojo.RespBean;
+import games.highping.server.pojo.Role;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -30,4 +31,6 @@ public interface IAdminService extends IService<Admin> {
     RespBean login(String username, String password, String code, HttpServletRequest request);
 
     Admin getAdminByUserName(String username);
+
+    List<Role> getRoles(Integer adminId);
 }

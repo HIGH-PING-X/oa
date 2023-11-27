@@ -6,8 +6,11 @@ import games.highping.server.pojo.Admin;
 import games.highping.server.pojo.Menu;
 import games.highping.server.service.IMenuService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 
@@ -24,9 +27,27 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements IM
 
     @Autowired
     private MenuMapper menuMapper;
+    @Autowired
+    private RedisTemplate redisTemplate;
 
+    /**
+     * 通过用户id获取菜单列表
+     * @return
+     */
     @Override
     public List<Menu> getMenuByAdminId() {
-        return menuMapper.getMenuByAdminId(((Admin) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId());
+        Integer id = ((Admin) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId();
+        ValueOperations<String, Object> valueOperations = redisTemplate.opsForValue();
+        List<Menu> menus = (List<Menu>) valueOperations.get("menu_" + id);
+        if (CollectionUtils.isEmpty(menus)) {
+            menus = menuMapper.getMenuByAdminId(id);
+            valueOperations.set("menu_" + id, menus);
+        }
+        return menus;
+    }
+
+    @Override
+    public List<Menu> getMenusWithRole() {
+        return menuMapper.getMenusWithRole();
     }
 }

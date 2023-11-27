@@ -15,6 +15,10 @@ import java.util.List;
  */
 public interface IMenuService extends IService<Menu> {
 
+    // 根据用户id查询菜单列表
     List<Menu> getMenuByAdminId();
+
+    // 根据角色获取菜单列表
+    List<Menu> getMenusWithRole();
 
 }

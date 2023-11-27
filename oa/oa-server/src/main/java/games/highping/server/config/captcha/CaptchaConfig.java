@@ -1,4 +1,4 @@
-package games.highping.server.config;
+package games.highping.server.config.captcha;
 
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.google.code.kaptcha.util.Config;

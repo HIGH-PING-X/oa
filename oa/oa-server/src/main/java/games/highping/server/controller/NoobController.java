@@ -15,4 +15,13 @@ public class NoobController {
         return "noob";
     }
 
+    @GetMapping("/employee/basic/noob")
+    public String employeeBasicNoob() {
+        return "employeeBasicNoob";
+    }
+
+    @GetMapping("/employee/advanced/noob")
+    public String employeeAdvancedNoob() {
+        return "employeeAdvancedNoob";
+    }
 }
