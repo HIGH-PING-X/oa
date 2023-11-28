@@ -4,6 +4,7 @@ import games.highping.server.pojo.Admin;
 import games.highping.server.pojo.AdminLoginParam;
 import games.highping.server.pojo.RespBean;
 import games.highping.server.service.IAdminService;
+import games.highping.server.utils.AdminUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class LoginController {
     @ApiOperation(value = "获取当前登录用户信息")
     @GetMapping("/admin/info")
     public Admin getAdminInfo() {
-        Admin principal = (Admin) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Admin principal = AdminUtils.getCurrentAdmin();
         if (null == principal) {
             return null;
         }

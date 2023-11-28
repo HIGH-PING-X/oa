@@ -19,18 +19,18 @@ import java.util.List;
  */
 public interface IAdminService extends IService<Admin> {
 
-    /**
-     * 登录之后返回token
-     *
-     * @param username
-     * @param password
-     * @param code
-     * @param request
-     * @return
-     */
+    // 登录之后返回token
     RespBean login(String username, String password, String code, HttpServletRequest request);
 
+    // 根据用户名获取用户
     Admin getAdminByUserName(String username);
 
+    // 根据用户id查询角色列表
     List<Role> getRoles(Integer adminId);
+
+    // 获取所有操作员
+    List<Admin> getAllAdmins(String keywords);
+
+    // 更新操作员信息
+    RespBean updateAdminRole(Integer adminId, Integer[] rids);
 }

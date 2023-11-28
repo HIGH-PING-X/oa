@@ -7,9 +7,11 @@ import games.highping.server.mapper.AdminMapper;
 import games.highping.server.mapper.AdminRoleMapper;
 import games.highping.server.mapper.RoleMapper;
 import games.highping.server.pojo.Admin;
+import games.highping.server.pojo.AdminRole;
 import games.highping.server.pojo.RespBean;
 import games.highping.server.pojo.Role;
 import games.highping.server.service.IAdminService;
+import games.highping.server.utils.AdminUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -18,6 +20,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -50,15 +53,7 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
     @Value("${jwt.tokenHead}")
     private String tokenHead;
 
-    /**
-     * 登录之后返回token
-     *
-     * @param username
-     * @param password
-     * @param code
-     * @param request
-     * @return
-     */
+    // 登录之后返回token
     @Override
     public RespBean login(String username, String password, String code, HttpServletRequest request) {
         //TODO update
@@ -97,6 +92,24 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
     @Override
     public List<Role> getRoles(Integer adminId) {
         return roleMapper.getRoles(adminId);
+    }
+
+    @Override
+    public List<Admin> getAllAdmins(String keywords) {
+        return adminMapper.getAllAdmins(AdminUtils.getCurrentAdmin().getId(), keywords);
+    }
+
+    @Override
+    @Transactional // 开启事务
+    public RespBean updateAdminRole(Integer adminId, Integer[] rids) {
+        // 先删除全部，后调用方法重新全部添加
+        adminRoleMapper.delete(new QueryWrapper<AdminRole>().eq("admin_id", adminId));
+        Integer result = adminRoleMapper.updateAdminRole(adminId, rids);
+        if (rids.length == result) {
+            return RespBean.success("更新成功！");
+        }
+        return RespBean.error("更新失败！");
+
     }
 
 }

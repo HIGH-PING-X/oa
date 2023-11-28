@@ -65,19 +65,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers(
-                "/noob/**",
-                "/websocket/**",
-                "/doc.html",
-                "/**.html",
-                "/login",
-                "/login/**",
-                "/register/**",
-                "/logout/**",
-                "/css/**",
-                "/js/**",
-                "/img/**",
-                "/fonts/**",
-                "favicon.ico",
+                "/noob/**",                     // 放行静态资源
+                "/websocket/**",                // 放行 websocket 资源
+                "/doc.html",                    // 放行 swagger 资源
+                "/**.html",                     // 放行静态资源
+                "/login",                       // 放行登录和注册接口
+                "/login/**",                    // 放行登录和注册接口
+                "/register/**",                 // 放行登录和注册接口
+                "/logout/**",                   // 放行登录和注册接口
+                "/css/**",                      // 放行静态资源
+                "/js/**",                       // 放行静态资源
+                "/img/**",                      // 放行静态资源
+                "/fonts/**",                    // 放行静态资源
+                "favicon.ico",                  // 放行 favicon.ico 资源
                 "/doc.html",                    // 放行 swagger 资源
                 "/webjars/**",                  // 放行 swagger 资源
                 "/swagger-resources/**",        // 放行 swagger 资源

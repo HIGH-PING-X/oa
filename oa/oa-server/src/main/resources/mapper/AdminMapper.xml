@@ -16,9 +16,39 @@
         <result column="enabled" property="enabled" />
     </resultMap>
 
+    <resultMap id="AdminWithRole" type="games.highping.server.pojo.Admin" extends="BaseResultMap">
+        <collection property="roles" ofType="games.highping.server.pojo.Role">
+            <id column="rid" property="id"/>
+            <result column="rname" property="name"/>
+            <result column="rnameZh" property="nameZh"/>
+        </collection>
+    </resultMap>
+
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         id, name, phone, telephone, address, username, password, user_face, remark, enabled
     </sql>
+
+    <select id="getAllAdmins" resultMap="AdminWithRole">
+        SELECT
+            a.*,
+            r.id AS rid,
+            r.name AS rname,
+            r.name_zh AS rnameZh
+        FROM
+            t_admin a
+        LEFT JOIN
+            t_admin_role ar ON a.id = ar.admin_id
+        LEFT JOIN
+            t_role r ON r.id = ar.rid
+        WHERE
+            a.id != #{id}
+            <if test="null != keywords and '' != keywords">
+            AND
+                a.name LIKE CONCAT('%',#{keywords}, '%')
+            </if>
+        ORDER BY
+        a.id
+    </select>
 
 </mapper>

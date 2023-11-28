@@ -2,8 +2,7 @@ package games.highping.server.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import games.highping.server.pojo.AdminRole;
-
-import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * <p>
@@ -14,4 +13,5 @@ import java.util.List;
  * @since 2023-11-20
  */
 public interface AdminRoleMapper extends BaseMapper<AdminRole> {
+    Integer updateAdminRole(@Param("adminId") Integer adminId, @Param("rids") Integer[] rids);
 }

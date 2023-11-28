@@ -6,6 +6,7 @@ import games.highping.server.pojo.Admin;
 import games.highping.server.pojo.Menu;
 import games.highping.server.pojo.Role;
 import games.highping.server.service.IMenuService;
+import games.highping.server.utils.AdminUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
@@ -37,7 +38,7 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements IM
      */
     @Override
     public List<Menu> getMenuByAdminId() {
-        Integer id = ((Admin) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId();
+        Integer id = AdminUtils.getCurrentAdmin().getId();
         ValueOperations<String, Object> valueOperations = redisTemplate.opsForValue();
         List<Menu> menus = (List<Menu>) valueOperations.get("menu_" + id);
         if (CollectionUtils.isEmpty(menus)) {
