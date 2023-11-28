@@ -2,6 +2,7 @@ package games.highping.server.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import games.highping.server.pojo.MenuRole;
+import games.highping.server.pojo.RespBean;
 
 /**
  * <p>
@@ -13,4 +14,6 @@ import games.highping.server.pojo.MenuRole;
  */
 public interface IMenuRoleService extends IService<MenuRole> {
 
+    // 更新角色菜单
+    RespBean updateMenuRole(Integer rid, Integer[] mids);
 }

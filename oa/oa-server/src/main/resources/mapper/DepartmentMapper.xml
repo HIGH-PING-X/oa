@@ -12,9 +12,36 @@
         <result column="is_parent" property="isParent" />
     </resultMap>
 
+    <resultMap id="DepartmentWithChildren" type="games.highping.server.pojo.Department" extends="BaseResultMap">
+        <collection property="children" ofType="games.highping.server.pojo.Department" select="games.highping.server.mapper.DepartmentMapper.getAllDepartments" column="id">
+        </collection>
+    </resultMap>
+
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         id, name, parent_id, dep_path, enabled, is_parent
     </sql>
+
+    <select id="getAllDepartments" resultMap="DepartmentWithChildren">
+        select
+        <include refid="Base_Column_List" />
+        from
+            t_department
+        where
+            parent_id = #{parentId}
+    </select>
+
+    <insert id="addDep" statementType="CALLABLE">
+        call addDep(#{name,mode=IN,jdbcType=VARCHAR},
+                    #{parentId,mode=IN,jdbcType=INTEGER},
+                    #{enabled,mode=IN,jdbcType=BOOLEAN},
+                    #{result,mode=OUT,jdbcType=INTEGER},
+                    #{id,mode=OUT,jdbcType=INTEGER})
+    </insert>
+
+    <delete id="deleteDep" statementType="CALLABLE">
+        call deleteDep(#{id,mode=IN,jdbcType=INTEGER},
+                       #{result,mode=OUT,jdbcType=INTEGER})
+    </delete>
 
 </mapper>

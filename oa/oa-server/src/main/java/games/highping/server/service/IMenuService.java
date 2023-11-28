@@ -2,6 +2,7 @@ package games.highping.server.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import games.highping.server.pojo.Menu;
+import games.highping.server.pojo.Role;
 
 import java.util.List;
 
@@ -21,4 +22,6 @@ public interface IMenuService extends IService<Menu> {
     // 根据角色获取菜单列表
     List<Menu> getMenusWithRole();
 
+    // 查询所有菜单
+    List<Role> getAllMenus();
 }

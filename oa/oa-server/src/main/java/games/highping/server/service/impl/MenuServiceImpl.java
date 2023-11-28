@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import games.highping.server.mapper.MenuMapper;
 import games.highping.server.pojo.Admin;
 import games.highping.server.pojo.Menu;
+import games.highping.server.pojo.Role;
 import games.highping.server.service.IMenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -49,5 +50,10 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements IM
     @Override
     public List<Menu> getMenusWithRole() {
         return menuMapper.getMenusWithRole();
+    }
+
+    @Override
+    public List<Role> getAllMenus() {
+        return menuMapper.getAllMenus();
     }
 }
