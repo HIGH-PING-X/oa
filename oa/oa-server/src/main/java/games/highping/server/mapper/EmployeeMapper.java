@@ -7,6 +7,7 @@ import games.highping.server.pojo.Employee;
 import org.apache.ibatis.annotations.Param;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * <p>
@@ -21,4 +22,6 @@ public interface EmployeeMapper extends BaseMapper<Employee> {
     IPage<Employee> getAllEmployeeByPage(Page<Employee> page,
                                          @Param("employee") Employee employee,
                                          @Param("beginDateScope") LocalDate[] beginDateScope);
+
+    List<Employee> exportEmployee(Integer id);
 }

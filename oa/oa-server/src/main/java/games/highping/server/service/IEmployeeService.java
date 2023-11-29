@@ -6,6 +6,7 @@ import games.highping.server.pojo.RespBean;
 import games.highping.server.pojo.RespPageBean;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * <p>
@@ -25,4 +26,7 @@ public interface IEmployeeService extends IService<Employee> {
 
     // 添加员工
     RespBean addEmp(Employee employee);
+
+    // 导出员工数据
+    List<Employee> exportEmployee(Integer id);
 }
