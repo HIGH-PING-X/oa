@@ -19,11 +19,10 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * <p>
- * ????Ա?
+ * 管理员表
  * </p>
  *
  * @author noob
