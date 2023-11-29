@@ -11,10 +11,9 @@ import java.util.List;
 
 /**
  * <p>
- * ????Ա? 服务类
+ * 管理员 服务类
  * </p>
  *
- * @author noob
  * @since 2023-11-20
  */
 public interface IAdminService extends IService<Admin> {
