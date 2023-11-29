@@ -2,7 +2,6 @@ package games.highping.server.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import games.highping.server.pojo.Admin;
-import games.highping.server.pojo.AdminRole;
 import games.highping.server.pojo.RespBean;
 import games.highping.server.pojo.Role;
 
