@@ -9,12 +9,12 @@ import games.highping.server.pojo.Employee;
 import games.highping.server.pojo.RespBean;
 import games.highping.server.pojo.RespPageBean;
 import games.highping.server.service.IEmployeeService;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.DecimalFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Map;
@@ -32,6 +32,8 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
 
     @Autowired
     private EmployeeMapper employeeMapper;
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
 
     @Override
     public RespPageBean getAllEmployeeByPage(Integer currentPage, Integer size, Employee employee, LocalDate[] beginDateScope) {
@@ -54,6 +56,8 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
         DecimalFormat decimalFormat = new DecimalFormat("##.00");
         employee.setContractTerm(Double.parseDouble(decimalFormat.format(days/365.00)));
         if (1 == employeeMapper.insert(employee)){
+            Employee emp = employeeMapper.exportEmployee(employee.getId()).get(0);
+            rabbitTemplate.convertAndSend("highping.mail.welcome",emp);
             return RespBean.success("添加成功");
         }
         return RespBean.error("添加失败");

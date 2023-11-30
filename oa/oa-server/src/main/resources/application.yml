@@ -33,6 +33,11 @@ spring:
         max-wait: 100000ms
         max-idle: 146
         min-idle: 4
+  rabbitmq:
+    username: guest
+    password: guest
+    host: 192.168.40.146
+    port: 5672
 
 mybatis-plus:
     mapper-locations: classpath:mapper/*.xml

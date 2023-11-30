@@ -17,6 +17,7 @@
     <modules>
         <module>oa-server</module>
         <module>oa-generator</module>
+        <module>oa-mail</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
