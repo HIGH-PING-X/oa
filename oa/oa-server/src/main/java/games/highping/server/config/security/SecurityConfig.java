@@ -66,7 +66,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers(
                 "/noob/**",                     // 放行静态资源
-                "/websocket/**",                // 放行 websocket 资源
                 "/doc.html",                    // 放行 swagger 资源
                 "/**.html",                     // 放行静态资源
                 "/login",                       // 放行登录和注册接口
@@ -83,7 +82,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 "/swagger-resources/**",        // 放行 swagger 资源
                 "/v2/api-docs/**",              // 放行 swagger 资源
                 "/captcha",                     // 验证码接口
-                "/ws/**"                        // 放行 websocket 资源
+                "/ws/**",                       // 放行 websocket 资源
+                "/websocket/**"                 // 放行 websocket 资源
         );
     }
 

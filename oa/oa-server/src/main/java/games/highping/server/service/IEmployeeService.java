@@ -29,4 +29,7 @@ public interface IEmployeeService extends IService<Employee> {
 
     // 导出员工数据
     List<Employee> exportEmployee(Integer id);
+
+    // 获取所有员工账套
+    RespPageBean getAllEmployeeWithSalary(Integer currentPage, Integer size);
 }

@@ -1,0 +1,32 @@
+server:
+  port: 8082
+spring:
+  mail:
+    host: smtp.qq.com
+    protocol: smtp
+    default-encoding: utf-8
+    username: 435050143@qq.com
+    password: svwecgekltddbjdj
+    port: 25
+
+  rabbitmq:
+    username: guest
+    password: guest
+    host: 192.168.40.146
+    port: 5672
+    listener:
+      simple:
+        acknowledge-mode: manual
+
+  redis:
+    timeout: 10000ms
+    host: 192.168.40.146
+    port: 6379
+    database: 0
+    password: '0000'
+    lettuce:
+      pool:
+        max-active: 146
+        max-wait: 100000ms
+        max-idle: 146
+        min-idle: 4
