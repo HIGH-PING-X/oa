@@ -101,7 +101,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
-    </dependencies>
 
+        <dependency>
+            <groupId>org.csource</groupId>
+            <artifactId>fastdfs-client-java</artifactId>
+            <version>1.30-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>
